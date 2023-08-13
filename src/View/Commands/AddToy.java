@@ -7,5 +7,9 @@ public class AddToy extends Command{
     public AddToy(View view) {
         super(view);
     }
+    private void execute(){
+        getView().addToy();
+
+    }
 
 }
