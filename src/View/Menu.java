@@ -3,6 +3,7 @@ package View;
 import View.Commands.*;
 import View.Commands.SystemCommands.AddToy;
 import View.Commands.SystemCommands.ChangeTheFrequencyOfDropout;
+import View.Commands.SystemCommands.ExitSystemMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ public class Menu {
         menu.add(new Exit(view));
         systemMenu.add(new AddToy(view));
         systemMenu.add(new ChangeTheFrequencyOfDropout(view));
+        systemMenu.add(new ExitSystemMenu(view));
     }
 
 
@@ -35,7 +37,7 @@ public class Menu {
             return nonCommsnds;
         }
 
-        for (int i = menu.size()-1; i < menu.size(); i++){
+        for (int i = 0; i < menu.size(); i++){
             listCommands.append(i);
             listCommands.append("-");
             listCommands.append(menu.get(i).getDescription());
@@ -52,21 +54,23 @@ public class Menu {
             return nonSystemCommsnds;
         }
 
-        for (int i = menu.size()-1; i < menu.size(); i++){
+        for (int i = 0; i < systemMenu.size(); i++){
             listSystemCommands.append(i);
             listSystemCommands.append("-");
-            listSystemCommands.append(menu.get(i).getDescription());
+            listSystemCommands.append(systemMenu.get(i).getDescription());
             listSystemCommands.append("\n");
         }
         return listSystemCommands;
     }
 
     public int getSizeCommands() {
-        return 0;
+
+        return menu.size();
     }
 
     public int getSizeSystemCommands() {
-        return 0;
+
+        return systemMenu.size();
     }
 
     void executeCommands(int choice) {

@@ -3,18 +3,18 @@ package View.Commands.SystemCommands;
 import View.Commands.Command;
 import View.View;
 
-public class AddToy extends Command {
-
-    public AddToy(View view) {
+public class ExitSystemMenu extends Command {
+    public ExitSystemMenu(View view) {
         super(view);
     }
+
     @Override
     public String getDescription() {
-        return "Добавить игрушку";
+        return "Выйти из меню системных настроек";
     }
+
     public void execute(){
-        getView().addToy();
+        getView().exitSystemMenu();
 
     }
-
 }

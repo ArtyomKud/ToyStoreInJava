@@ -30,4 +30,7 @@ public class View {
 
     public void exit() {
     }
+
+    public void exitSystemMenu() {
+    }
 }

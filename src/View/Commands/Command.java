@@ -3,8 +3,7 @@ package View.Commands;
 import View.View;
 
 
-public class Command {
-    private String description;
+public abstract class Command {
     private View view;
 
     public Command(View view){
@@ -14,9 +13,7 @@ public class Command {
         return view;
     }
 
-    public String getDescription() {
-        return description;
-    }
+    public abstract String getDescription();
 
     public void execute(){
 

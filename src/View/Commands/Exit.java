@@ -3,10 +3,16 @@ package View.Commands;
 import View.View;
 
 public class Exit extends Command{
-    private String description = "Выход";
+
     public Exit(View view) {
         super(view);
     }
+
+    @Override
+    public String getDescription() {
+        return "Выход";
+    }
+
     public void execute(){
         getView().exit();
 

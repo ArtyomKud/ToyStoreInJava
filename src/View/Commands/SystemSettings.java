@@ -3,9 +3,13 @@ package View.Commands;
 import View.View;
 
 public class SystemSettings extends Command{
-    private String description = "Системные настройки";
+
     public SystemSettings(View view) {
         super(view);
+    }
+    @Override
+    public String getDescription() {
+        return "Системные настройки";
     }
     public void execute(){
         getView().systemSettings();

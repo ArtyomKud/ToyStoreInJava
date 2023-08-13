@@ -6,11 +6,13 @@ import java.util.Scanner;
 
 public class ViewConsole extends View{
     private Boolean flag;
+    private Boolean flag1;
     private Scanner scanner;
 
     public ViewConsole(){
         scanner = new Scanner(System.in);
         flag = true;
+        flag1 = true;
         this.menu = new Menu(this);
     }
 
@@ -25,16 +27,8 @@ public class ViewConsole extends View{
             else {
                 System.out.println("Неверный номер пункта");
             }
-            while (flag) {
-                System.out.println(menu.getListSystemCommands());
-                choice = scanner.nextLine();
-                if (checkSystemCommand(choice)) {
-                    menu.executeSystemCommands(Integer.parseInt(choice));
-                } else {
-                    System.out.println("Неверный номер пункта");
-                }
-                flag = true;
-            }
+
+
         }
 
 
@@ -72,12 +66,27 @@ public class ViewConsole extends View{
 
     @Override
     public void systemSettings() {
+        while (flag1) {
+            System.out.println(menu.getListSystemCommands());
+            String choice = scanner.nextLine();
+            if (checkSystemCommand(choice)) {
+                menu.executeSystemCommands(Integer.parseInt(choice));
+            } else {
+                System.out.println("Неверный номер пункта");
+            }
+        }
     }
 
     @Override
     public void exit() {
         flag = false;
     }
+    @Override
+    public void exitSystemMenu() {
+        flag1 = false;
+    }
+
+
 
 
 
