@@ -10,4 +10,10 @@ public class View {
 
     public void holdRaffleToys() {
     }
+
+    public void getPrizeToy() {
+    }
+
+    public void systemSettings() {
+    }
 }
