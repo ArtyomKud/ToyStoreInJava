@@ -60,4 +60,20 @@ public class Menu {
         }
         return listSystemCommands;
     }
+
+    public int getSizeCommands() {
+        return 0;
+    }
+
+    public int getSizeSystemCommands() {
+        return 0;
+    }
+
+    void executeCommands(int choice) {
+        menu.get(choice).execute();
+    }
+    void executeSystemCommands(int choice) {
+        systemMenu.get(choice).execute();
+    }
+
 }

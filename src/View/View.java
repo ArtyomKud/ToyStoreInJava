@@ -1,6 +1,17 @@
 package View;
 
+import Presenter.Presenter;
+
 public class View {
+    protected Presenter presenter;
+    protected Menu menu;
+
+
+    public void start(){}
+
+    public void setPresenter(Presenter presenter) {
+        this.presenter = presenter;
+    }
     public void addToy(){
 
     }

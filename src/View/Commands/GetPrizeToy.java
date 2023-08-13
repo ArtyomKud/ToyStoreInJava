@@ -7,7 +7,7 @@ public class GetPrizeToy extends Command{
     public GetPrizeToy(View view) {
         super(view);
     }
-    private void execute(){
+    public void execute(){
         getView().getPrizeToy();
 
     }

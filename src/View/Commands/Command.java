@@ -18,7 +18,7 @@ public class Command {
         return description;
     }
 
-    private void execute(){
+    public void execute(){
 
     }
 }
