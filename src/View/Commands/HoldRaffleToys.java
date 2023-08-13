@@ -7,7 +7,7 @@ public class HoldRaffleToys extends Command{
     public HoldRaffleToys(View view) {
         super(view);
     }
-    private void execute(){
+    public void execute(){
         getView().holdRaffleToys();
 
     }

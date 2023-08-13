@@ -2,7 +2,7 @@ package View;
 
 import View.Commands.*;
 import View.Commands.SystemCommands.AddToy;
-import View.Commands.SystemCommands.СhangeTheFrequencyOfDropout;
+import View.Commands.SystemCommands.ChangeTheFrequencyOfDropout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ public class Menu {
         menu.add(new SystemSettings(view));
         menu.add(new Exit(view));
         systemMenu.add(new AddToy(view));
-        systemMenu.add(new СhangeTheFrequencyOfDropout(view));
+        systemMenu.add(new ChangeTheFrequencyOfDropout(view));
     }
 
 

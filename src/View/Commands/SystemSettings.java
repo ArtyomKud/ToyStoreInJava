@@ -7,7 +7,7 @@ public class SystemSettings extends Command{
     public SystemSettings(View view) {
         super(view);
     }
-    private void execute(){
+    public void execute(){
         getView().systemSettings();
 
     }

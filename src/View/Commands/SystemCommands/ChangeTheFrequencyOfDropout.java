@@ -3,12 +3,12 @@ package View.Commands.SystemCommands;
 import View.Commands.Command;
 import View.View;
 
-public class СhangeTheFrequencyOfDropout extends Command {
+public class ChangeTheFrequencyOfDropout extends Command {
     private String description = "Изменить частоту выпадения игрушки";
-    public СhangeTheFrequencyOfDropout(View view) {
+    public ChangeTheFrequencyOfDropout(View view) {
         super(view);
     }
-    private void execute(){
+    public void execute(){
         getView().changeTheFrequencyOfDropout();
 
     }
