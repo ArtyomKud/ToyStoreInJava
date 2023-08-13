@@ -16,4 +16,7 @@ public class View {
 
     public void systemSettings() {
     }
+
+    public void exit() {
+    }
 }
