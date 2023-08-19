@@ -101,6 +101,37 @@ public class ViewConsole extends View{
 
     @Override
     public void changeTheFrequencyOfDropout() {
+        String title;
+        int frequencyOfLoss;
+        while (true) {
+
+            while (true){
+                System.out.println("Введите текстовое название игрушки: ");
+                title = scanner.nextLine();
+                if(title.length()==0){
+                    continue;
+                }
+                break;
+            }
+
+            while (true) {
+                System.out.println("Введите процент выпадения игрушки от 0 до 100: ");
+                try {
+                    frequencyOfLoss = Integer.parseInt(scanner.nextLine());
+
+                } catch (NumberFormatException e) {
+                    System.out.println("Процент выпадения игрушки введен не верно");
+                    continue;
+                }
+                if(frequencyOfLoss < 0 || frequencyOfLoss >100){
+                    System.out.println("Процент выпадения игрушки введен не верно");
+                    continue;
+                }
+                break;
+            }
+            break;
+        }
+        System.out.println(presenter.changeTheFrequencyOfDropout(title, frequencyOfLoss));
 
     }
 

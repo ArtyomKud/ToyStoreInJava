@@ -22,6 +22,18 @@ public class Model {
 
     }
 
+    public Boolean changeTheFrequencyOfDropout(String title, int frequencyOfLoss){
+        if(checkToy(title)) {
+            for (Toy toy: toys) {
+                toy.setFrequencyOfLoss(frequencyOfLoss);
+                return true;
+
+            }
+
+        }
+        return false;
+    }
+
     private Boolean checkToy(String title){
         if(toys.size() == 0){
             return false;

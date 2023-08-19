@@ -24,5 +24,16 @@ public class Presenter {
 
     }
 
+    public String changeTheFrequencyOfDropout(String title, int frequencyOfLoss){
+        Boolean flag;
+        flag = model.changeTheFrequencyOfDropout(title, frequencyOfLoss);
+        if(flag){
+            return "Частота выпадения игрушки изменена";
+        }
+        else {
+            return "Игрушка с таким названием не найдена";
+        }
+    }
+
 
 }
