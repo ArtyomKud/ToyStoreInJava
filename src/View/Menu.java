@@ -11,7 +11,7 @@ import java.util.List;
 public class Menu {
     private View view;
     private List<Command> menu;
-    private List<Command> systemMenu = new ArrayList<>();
+    private List<Command> systemMenu;
 
     public Menu(View view){
         menu = new ArrayList<>();

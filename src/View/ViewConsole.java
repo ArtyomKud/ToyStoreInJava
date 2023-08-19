@@ -49,11 +49,59 @@ public class ViewConsole extends View{
 
     @Override
     public void addToy(){
+        String title;
+        int quantity;
+        int frequencyOfLoss;
+        while (true) {
+
+            while (true){
+                System.out.println("Введите текстовое название игрушки: ");
+                title = scanner.nextLine();
+                if(title.length()==0){
+                    continue;
+                }
+                break;
+            }
+            while (true) {
+                System.out.println("Введите количество: ");
+                try {
+                    quantity = Integer.parseInt(scanner.nextLine());
+
+                } catch (NumberFormatException e) {
+                    System.out.println("Введено не верное количество");
+                    continue;
+                }
+                if(quantity <= 0){
+                    System.out.println("Введено неверное количество");
+                    continue;
+                }
+                break;
+            }
+            while (true) {
+                System.out.println("Введите процент выпадения игрушки от 0 до 100: ");
+                try {
+                    frequencyOfLoss = Integer.parseInt(scanner.nextLine());
+
+                } catch (NumberFormatException e) {
+                    System.out.println("Процент выпадения игрушки введен не верно");
+                    continue;
+                }
+                if(frequencyOfLoss < 0 || frequencyOfLoss >100){
+                    System.out.println("Процент выпадения игрушки введен не верно");
+                    continue;
+                }
+                break;
+            }
+            break;
+        }
+        System.out.println(presenter.addToy(title, quantity, frequencyOfLoss));
+
 
     }
 
     @Override
     public void changeTheFrequencyOfDropout() {
+
     }
 
     @Override

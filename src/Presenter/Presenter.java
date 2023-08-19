@@ -12,6 +12,17 @@ public class Presenter {
         this.view = view;
         view.setPresenter(this);
     }
+    public String addToy(String title, int quantity, int frequencyOfLoss){
+        Boolean flag;
+        flag = model.addToy(title,quantity, frequencyOfLoss);
+        if(flag){
+            return "Игрушка успешно добавлена";
+        }
+        else {
+            return "Игрушка с таким названием уже существует";
+        }
+
+    }
 
 
 }
