@@ -18,7 +18,9 @@ public class ViewConsole extends View{
 
     @Override
     public void start() {
+        presenter.checkJsonFile();
         while (flag) {
+            flag1 = true;
             System.out.println(menu.getListCommands());
             String choice = scanner.nextLine();
             if (checkCommand(choice)) {
@@ -137,6 +139,7 @@ public class ViewConsole extends View{
 
     @Override
     public void holdRaffleToys() {
+        System.out.println(presenter.holdRaffleToys());
     }
 
     @Override

@@ -35,5 +35,23 @@ public class Presenter {
         }
     }
 
+    public String holdRaffleToys(){
+        String nameToy;
+        nameToy = model.holdRaffleToys();
+        if(nameToy.equals("Игрушек для розыгрыша нет")){
+            return nameToy;
+        }
+        else if(nameToy.length()!= 0){
+            return "Вы выиграли игрушку "+nameToy;
+        }
+        else {
+            return "Вы ничего не выиграли =(";
+        }
+
+    }
+    public void checkJsonFile(){
+        model.checkJsonFile();
+    }
+
 
 }

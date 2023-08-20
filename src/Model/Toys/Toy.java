@@ -15,7 +15,7 @@ public class Toy implements Serializable {
         this.frequencyOfLoss = frequencyOfLoss;
     }
 
-    public static int getId() {
+    public int getId() {
         return id;
     }
 
