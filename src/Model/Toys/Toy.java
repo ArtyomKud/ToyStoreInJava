@@ -38,4 +38,22 @@ public class Toy implements Serializable {
     public void setFrequencyOfLoss(int frequencyOfLoss) {
         this.frequencyOfLoss = frequencyOfLoss;
     }
+
+    @Override
+    public String toString(){
+        StringBuilder str2 = new StringBuilder();
+        str2.append("id");
+        str2.append(getId());
+        str2.append("\n");
+        str2.append("Название: ");
+        str2.append(getTitle());
+        str2.append("\n");
+        str2.append("Количество: ");
+        str2.append(getQuantity());
+        str2.append("\n");
+        str2.append("Процент выпадения: ");
+        str2.append(getFrequencyOfLoss());
+
+        return str2.toString();
+    }
 }

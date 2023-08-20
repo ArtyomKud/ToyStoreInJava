@@ -124,4 +124,16 @@ public class Model {
     }
 
 
+    public String printListToys() {
+        StringBuilder str = new StringBuilder();
+        if(toys.size()>0){
+            for (Toy toy: toys) {
+                str.append(toy.toString());
+                str.append("\n");
+            }
+            return str.toString();
+        }
+        return "Списк игрушек пуст!";
+
+    }
 }

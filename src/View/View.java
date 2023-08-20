@@ -33,4 +33,7 @@ public class View {
 
     public void exitSystemMenu() {
     }
+
+    public void printListToys() {
+    }
 }

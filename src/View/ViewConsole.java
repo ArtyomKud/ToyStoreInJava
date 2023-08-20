@@ -168,6 +168,11 @@ public class ViewConsole extends View{
         flag1 = false;
     }
 
+    @Override
+    public void printListToys() {
+        System.out.println(presenter.printListToys());
+    }
+
 
 
 

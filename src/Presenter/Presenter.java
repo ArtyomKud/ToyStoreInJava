@@ -54,4 +54,7 @@ public class Presenter {
     }
 
 
+    public String printListToys() {
+        return model.printListToys();
+    }
 }

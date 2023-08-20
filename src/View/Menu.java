@@ -4,6 +4,7 @@ import View.Commands.*;
 import View.Commands.SystemCommands.AddToy;
 import View.Commands.SystemCommands.ChangeTheFrequencyOfDropout;
 import View.Commands.SystemCommands.ExitSystemMenu;
+import View.Commands.SystemCommands.PrintListToys;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,7 @@ public class Menu {
         menu.add(new Exit(view));
         systemMenu.add(new AddToy(view));
         systemMenu.add(new ChangeTheFrequencyOfDropout(view));
+        systemMenu.add(new PrintListToys(view));
         systemMenu.add(new ExitSystemMenu(view));
     }
 
