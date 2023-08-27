@@ -16,11 +16,9 @@ public class Model {
     File listToys;
     String filePath = new File("").getAbsolutePath();
     String fileNameListToys = "listToys.txt";
-    String fileNameJsonListWonToys = "listWonToys.json";
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    String fileNameListWonToys = "listWonToys.txt";
     List<Toy> toys = new ArrayList<>();
     Random random = new Random();
-    String jsonString;
 
 
     public Boolean addToy(String title, int quantity, int frequencyOfLoss){
@@ -76,12 +74,14 @@ public class Model {
                 int temp = toy.getQuantity()-1;
                 toy.setQuantity(temp);
                 nameWinToy = toy.getTitle();
+                saveListWonToys(toy);
                 if(toy.getQuantity()==0){
                     toys.remove(toy);
                 }
                 break;
             }
         }
+
         return nameWinToy;
 
     }
@@ -182,5 +182,20 @@ public class Model {
         }
 
         return "Ошибка, повторите попытку";
+    }
+
+    public void saveListWonToys(Toy toy){
+        StringBuilder str = new StringBuilder();
+        str.append(toy.getTitle());
+        str.append("-1");
+        str.append("\n");
+
+        try(FileWriter writer = new FileWriter(fileNameListWonToys, true)) {
+            writer.write(str.toString());
+            writer.flush();
+        }
+        catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
     }
 }
