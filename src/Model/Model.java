@@ -6,16 +6,16 @@ import com.google.gson.GsonBuilder;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Model {
     File listToys;
     String filePath = new File("").getAbsolutePath();
-    String fileNameJsonListToys = "listToys.json";
+    String fileNameListToys = "listToys.txt";
     String fileNameJsonListWonToys = "listWonToys.json";
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     List<Toy> toys = new ArrayList<>();
@@ -99,22 +99,35 @@ public class Model {
         return false;
     }
 
-    public void checkJsonFile() {
-        gson = new Gson();
+    public void checkListToysFile() {
+        List<String[]> list = new ArrayList<>();
+        StringBuilder str3 = new StringBuilder();
+        str3.append(filePath);
+        str3.append("\\");
+        str3.append(fileNameListToys);
+
         try {
-            if(listToys.exists() && !listToys.isDirectory()){
-                GsonBuilder builder = new GsonBuilder();
-                gson = builder.create();
-                BufferedReader bufferedReader = null;
-                try {
-                    bufferedReader = new BufferedReader(
-                            new FileReader(fileNameJsonListToys));
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+            if(Files.exists(Paths.get(String.valueOf(str3))) && !Files.isDirectory(Paths.get(String.valueOf(str3)))){
+                try(FileReader reader = new FileReader(String.valueOf(str3)))
+                {
+                    Scanner scanner = new Scanner(reader);
+                    while (scanner.hasNextLine()){
+                        list.add(scanner.nextLine().split(" "));
+                    }
+
+
                 }
-                toys = (List<Toy>) gson.fromJson(bufferedReader, Toy.class);
+                catch(IOException ex){
+
+                    System.out.println(ex.getMessage());
+                }
+                for (String[] str2: list) {
+                    toys.add(new Toy(str2[2], Integer.parseInt(str2[4]), Integer.parseInt(str2[7])));
+                }
+
             }
         } catch (NullPointerException e){
+            e.getMessage();
 
         }
 
@@ -135,5 +148,23 @@ public class Model {
         }
         return "Списк игрушек пуст!";
 
+    }
+
+    public void saveListToys(){
+        StringBuilder str = new StringBuilder();
+        if(toys.size()>0){
+            for (Toy toy: toys) {
+                str.append(toy.toString());
+                str.append("\n");
+            }
+
+        }
+        try(FileWriter writer = new FileWriter(fileNameListToys, false)) {
+            writer.write(str.toString());
+            writer.flush();
+        }
+        catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
     }
 }

@@ -50,11 +50,16 @@ public class Presenter {
 
     }
     public void checkJsonFile(){
-        model.checkJsonFile();
+        model.checkListToysFile();
     }
 
 
     public String printListToys() {
         return model.printListToys();
+    }
+
+    public void saveListToys() {
+        model.saveListToys();
+
     }
 }

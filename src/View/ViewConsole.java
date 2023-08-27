@@ -161,6 +161,7 @@ public class ViewConsole extends View{
 
     @Override
     public void exit() {
+        presenter.saveListToys();
         flag = false;
     }
     @Override

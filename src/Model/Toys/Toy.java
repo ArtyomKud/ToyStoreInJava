@@ -3,16 +3,18 @@ package Model.Toys;
 import java.io.Serializable;
 
 public class Toy implements Serializable {
-    private static int id;
+    private static  int count = 1;
+    private int id;
     private String title;
     private int quantity;
     private int frequencyOfLoss;
 
     public Toy(String title, int quantity, int frequencyOfLoss){
-        this.id++;
+        this.id = count;
         this.title = title;
         this.quantity = quantity;
         this.frequencyOfLoss = frequencyOfLoss;
+        count++;
     }
 
     public int getId() {
@@ -44,13 +46,13 @@ public class Toy implements Serializable {
         StringBuilder str2 = new StringBuilder();
         str2.append("id");
         str2.append(getId());
-        str2.append("\n");
+        str2.append(" ");
         str2.append("Название: ");
         str2.append(getTitle());
-        str2.append("\n");
+        str2.append(" ");
         str2.append("Количество: ");
         str2.append(getQuantity());
-        str2.append("\n");
+        str2.append(" ");
         str2.append("Процент выпадения: ");
         str2.append(getFrequencyOfLoss());
 
