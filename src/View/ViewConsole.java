@@ -175,7 +175,13 @@ public class ViewConsole extends View{
     }
 
 
-
+    @Override
+    public void deleteToy() {
+        String name;
+        System.out.println("Введите текстовое название игрушки: ");
+        name = scanner.nextLine();
+        System.out.println(presenter.deleteToy(name));
+    }
 
 
 

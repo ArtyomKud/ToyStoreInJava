@@ -167,4 +167,20 @@ public class Model {
             System.out.println(ex.getMessage());
         }
     }
+
+    public String deleteToy(String name) {
+        String answer;
+        if(toys.size() == 0){
+            return "Список игрушек пуст!";
+        }
+
+        for (Toy toy: toys) {
+            if (toy.getTitle().equalsIgnoreCase(name)) {
+                toys.remove(toy);
+                return "Игрушка удалена";
+            }
+        }
+
+        return "Ошибка, повторите попытку";
+    }
 }

@@ -62,4 +62,8 @@ public class Presenter {
         model.saveListToys();
 
     }
+
+    public String deleteToy(String name) {
+       return model.deleteToy(name);
+    }
 }

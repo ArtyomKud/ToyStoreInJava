@@ -36,4 +36,7 @@ public class View {
 
     public void printListToys() {
     }
+
+    public void deleteToy() {
+    }
 }
